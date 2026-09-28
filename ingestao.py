@@ -2,7 +2,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 # 1. Configuração da conexão com o PostgreSQL local
-db_url = 'postgresql://admin:admin@localhost:5432/iot_db'
+db_url = 'postgresql://admin:admin@localhost:5433/iot_db?client_encoding=utf8'
 engine = create_engine(db_url)
 
 # 2. Leitura do arquivo CSV
