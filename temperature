@@ -1,0 +1,11 @@
+CREATE OR REPLACE VIEW vw_max_min_temp_per_day AS
+SELECT 
+    DATE(timestamp) AS reading_date,
+    MAX(temperature) AS max_temp,
+    MIN(temperature) AS min_temp
+FROM 
+    iot_readings
+GROUP BY 
+    DATE(timestamp)
+ORDER BY 
+    reading_date DESC;

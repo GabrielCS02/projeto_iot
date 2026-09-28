@@ -1,0 +1,10 @@
+CREATE OR REPLACE VIEW vw_avg_temp_by_device AS
+SELECT 
+    device_id,
+    ROUND(AVG(temperature)::numeric, 2) AS avg_temperature
+FROM 
+    iot_readings
+GROUP BY 
+    device_id
+ORDER BY 
+    avg_temperature DESC;
